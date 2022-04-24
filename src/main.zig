@@ -10,7 +10,6 @@ const Point = mesh.Point;
 
 const VertexDatum = packed struct {
     pos: Point,
-    rgb: [3]f32,
 };
 
 fn fb_size_callback(_: glfw.Window, width: u32, height: u32) void {
@@ -120,10 +119,10 @@ pub fn main() anyerror!u8 {
     std.log.info("Total size of vertex is {} bytes", .{@sizeOf(VertexDatum)});
 
     const vertices = [_]VertexDatum{
-        .{ .pos = .{ .x = -0.5, .y = -0.5, .z = 0 }, .rgb = .{ 0, 1.0, 0 } },
-        .{ .pos = .{ .x = -0.5, .y = 0.5, .z = 0 }, .rgb = .{ 0, 1.0, 0 } },
-        .{ .pos = .{ .x = 0.5, .y = 0.5, .z = 0 }, .rgb = .{ 0, 1.0, 0 } },
-        .{ .pos = .{ .x = 0.5, .y = -0.5, .z = 0 }, .rgb = .{ 0, 1.0, 0 } },
+        .{ .pos = .{ .x = -0.5, .y = -0.5, .z = 0 } },
+        .{ .pos = .{ .x = -0.5, .y = 0.5, .z = 0 } },
+        .{ .pos = .{ .x = 0.5, .y = 0.5, .z = 0 } },
+        .{ .pos = .{ .x = 0.5, .y = -0.5, .z = 0 } },
     };
 
     const faces = [_]u32{
